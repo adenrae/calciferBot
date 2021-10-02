@@ -1,4 +1,4 @@
-# calciferQuotes
+# calciferBot
 Discord bot that prints calcifer quotes to the user
 
 ## Current capabilities:

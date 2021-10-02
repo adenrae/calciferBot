@@ -2,9 +2,11 @@
 #  prints randomly chosen calcifer quotes
 
 import os
+import random
 
 import discord
 from dotenv import load_dotenv
+from calcLines import calcLines
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -18,21 +20,24 @@ client = discord.Client(intents=intents)
 async def on_ready():
     print(f'{client.user} has connected to Discord!')
 
-    guild = discord.utils.get(client.guilds, name=GUILD)
-    
-    print (
-        f'{client.user} is connected to the following guild:\n'
-        f'{guild.name}(id: {guild.id})'
-    )
-
-    members = '\n - '.join([member.name for member in guild.members])
-    print(f'Guild members: \n - {members}')
-
 @client.event
 async def on_member_join(member):
-    await member.create_dm()
-    await member.dm_channel.send(
-        f''
-    )
+
+    welcome = f'hello {member.nick}'
+
+    await member.send(welcome, allowed_mentions = True)
+
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+    
+    if message.content == '!howls':
+        response = random.choice(calcLines)
+        await message.channel.send(response)
+
+    help = 'type `!howls` to use me. maybe i\'ll do more in the future.'
+    if message.content == '!help':
+         await message.channel.send(help)
 
 client.run(TOKEN)

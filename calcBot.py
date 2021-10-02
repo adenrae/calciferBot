@@ -25,7 +25,7 @@ async def on_member_join(member):
 
     welcome = f'hello {member.nick}'
 
-    await member.send(welcome, allowed_mentions = True)
+    await member.send(welcome)
 
 @client.event
 async def on_message(message):

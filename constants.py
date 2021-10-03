@@ -78,3 +78,12 @@ calcLines = [
     "I really missed you all. Besides, it looks like rain...",
     "[giggles]"
 ]
+
+help = {
+    'howls':'- Prints a random line of Calcifer\'s from Howl\'s Moving Castle',
+    'crypto':'- Prints the top 5 cryptocurrencies in terms of growth',
+    'getLyrics':'- Returns the lyrics to a song',
+    'createEmote':'- Creates an emote with the image supplied *(managers only)*'
+}
+
+commandPrefix = '!'

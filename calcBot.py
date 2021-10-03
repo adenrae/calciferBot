@@ -52,15 +52,10 @@ async def howls(ctx):
     response = random.choice(calcLines)
     await ctx.send(response)
 
-# !crypto
-@client.command(help = help.crypto)
-async def crpyto(ctx, timespan):
-    await ctx.send('placeholder')
-
 # !createEmote
-# @client.command()
-# async def createEmote(ctx, img):
-#     return
+@client.command()
+async def createEmote(ctx, img):
+    await ctx.send('placeholder')
 
 # !getLyrics
 # @client.command()

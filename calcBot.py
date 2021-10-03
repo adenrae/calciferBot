@@ -12,9 +12,7 @@ import os
 import random
 import discord
 
-#from discord.ext.commands import Bot
 from discord.ext import commands
-
 from dotenv import load_dotenv
 from constants import *
 
